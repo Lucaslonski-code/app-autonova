@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# APP AUTONOVA
 
-First, run the development server:
+Sistema principal da plataforma Autonova.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Objetivo
+
+Este projeto é responsável por:
+
+* Cadastro de empresas
+* Login de usuários
+* Autenticação Google
+* Recuperação de senha
+* Dashboard administrativo
+* Gestão de clientes
+* Gestão de agendamentos
+* Gestão de pedidos
+* Gestão de produtos
+* Integração com agentes de IA
+* Integração com MCP Server
+
+---
+
+## Arquitetura
+
+```text
+Frontend
+
+Next.js 16
+React 19
+TypeScript
+Tailwind CSS
+
+↓
+
+API
+
+api.autonovasoftware.com
+
+↓
+
+MongoDB
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Ambientes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_API_URL=https://api.autonovasoftware.com/api
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Instalação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Desenvolvimento
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Build
+
+```bash
+pnpm build
+```
+
+---
+
+## Estrutura
+
+```text
+src/
+
+app/
+components/
+contexts/
+hooks/
+services/
+types/
+lib/
+constants/
+```
+
+---
+
+## Documentação
+
+Toda documentação operacional encontra-se na pasta:
+
+```text
+docs/
+```
+
+A leitura deve seguir a ordem indicada dentro da documentação.
+
+---
+
+## Status Atual
+
+Projeto em desenvolvimento.
+
+Módulos planejados:
+
+* Autenticação
+* Dashboard
+* Clientes
+* Agenda
+* Produtos
+* Pedidos
+* IA
+* Integrações
+* Configurações
+
+---
+
+## Equipe
+
+Autonova Software
+
+Todos os direitos reservados.
+
