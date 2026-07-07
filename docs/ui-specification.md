@@ -1,183 +1,51 @@
 
-# UI Specification — Autonova
+# UI Specification
 
 ## Objetivo
 
-Este documento define todas as regras visuais e comportamentais da interface da Autonova.
+Este documento define todas as regras visuais da Autonova.
 
-Ele serve como referência oficial para qualquer desenvolvimento Front-end.
+Todo novo componente, tela ou funcionalidade deverá seguir estas especificações.
 
-Nenhum componente, tela ou fluxo deverá ser criado sem seguir estas especificações.
-
----
-
-# Escopo
-
-Este documento cobre:
-
-- Site institucional
-- App (app.autonovasoftware.com)
-- Dashboard
-- Painéis administrativos
-- CRM
-- Agenda
-- Produtos
-- Pedidos
-- IA
-- Configurações
-- Futuro aplicativo mobile
-
-Todos compartilham o mesmo Design System.
+Caso seja necessário alterar algum padrão visual, este documento deverá ser atualizado antes da implementação.
 
 ---
 
-# Filosofia da Interface
+# Identidade Visual
 
-A interface da Autonova deve transmitir imediatamente:
+A Autonova transmite:
 
-- tecnologia
-- inteligência
-- automação
-- confiança
-- estabilidade
-- organização
-- alto valor
+• tecnologia
+• inteligência
+• automação
+• organização
+• confiabilidade
+• sofisticação
 
-Nunca deve parecer um painel administrativo genérico.
+A interface deve parecer limpa, moderna e premium.
 
-O usuário deve perceber que está utilizando uma plataforma premium.
+Nunca exagerada.
 
----
-
-# Princípios
-
-## Minimalismo
-
-Cada elemento deve possuir uma função.
-
-Se um componente não agrega informação ou ação, ele não deve existir.
-
-Nunca adicionar elementos apenas para preencher espaço.
-
----
-
-## Clareza
-
-O usuário nunca deve precisar "descobrir" onde clicar.
-
-A hierarquia visual deve conduzir naturalmente o olhar.
-
----
-
-## Consistência
-
-Todo componente deve possuir comportamento previsível.
-
-Botões iguais.
-
-Inputs iguais.
-
-Cards iguais.
-
-Tabelas iguais.
-
-Nenhuma tela deve parecer pertencer a outro sistema.
-
----
-
-## Escalabilidade
-
-Toda decisão visual deve considerar que o sistema continuará crescendo durante anos.
-
-O objetivo não é apenas atender às telas atuais.
-
-O objetivo é suportar dezenas de módulos futuros sem necessidade de refatoração visual.
-
----
-
-## Movimento
-
-Animações existem para orientar.
-
-Nunca para chamar atenção.
-
-Toda animação deve melhorar a experiência.
-
-Jamais competir com o conteúdo.
-
----
-
-# Linguagem Visual
-
-A Autonova utiliza uma linguagem baseada em:
-
-- superfícies escuras
-- alto contraste
-- tipografia forte
-- espaços amplos
-- poucos elementos por tela
-- profundidade discreta
-- animações suaves
-
-O usuário deve sentir organização antes mesmo de ler qualquer informação.
-
----
-
-# Experiência
-
-A plataforma deve transmitir a sensação de:
-
-"Estou utilizando uma ferramenta extremamente inteligente."
-
-Nunca:
-
-"Estou utilizando um sistema complicado."
-
----
-
-# Regras Gerais
-
-Toda tela deve responder às seguintes perguntas:
-
-✔ Qual é o objetivo principal desta tela?
-
-✔ Qual é a ação principal?
-
-✔ Qual informação precisa chamar atenção primeiro?
-
-✔ Existe espaço suficiente entre os elementos?
-
-✔ Existe consistência com o restante da plataforma?
-
-Se qualquer resposta for "não", a interface deve ser revisada.
-
----
-
-# Regra da Equipe
-
-Nenhuma decisão visual deve ser tomada baseada em preferência pessoal.
-
-Toda alteração deve respeitar este documento.
-
-Caso uma nova necessidade surja, primeiro este documento é atualizado.
-
-Somente depois o código é alterado.
+Nunca poluída.
 
 ---
 
 # Paleta Oficial
 
-A Autonova utiliza uma paleta escura.
+Todas as cores da plataforma são definidas aqui.
 
-Todo novo componente deverá utilizar exclusivamente estas cores.
-
-Nunca utilizar cores aleatórias.
+Nenhum componente poderá utilizar cores diferentes sem atualização deste documento.
 
 ---
 
-# PARTE 1
-
 ## Background Principal
+
+Usado em:
+
+• fundo da aplicação
+• login
+• dashboard
+• páginas internas
 
 HEX
 
@@ -185,16 +53,15 @@ HEX
 #09090B
 ```
 
-Uso:
-
-- fundo da aplicação
-- login
-- dashboard
-- páginas internas
-
 ---
 
 ## Background Secundário
+
+Usado em:
+
+• sidebar
+• menus
+• áreas secundárias
 
 HEX
 
@@ -202,15 +69,16 @@ HEX
 #111827
 ```
 
-Uso:
-
-- sidebar
-- blocos
-- painéis
-
 ---
 
 ## Surface
+
+Usado em:
+
+• card
+• modais
+• widgets
+• containers
 
 HEX
 
@@ -218,15 +86,15 @@ HEX
 #18181B
 ```
 
-Uso:
-
-- cards
-- modais
-- widgets
-
 ---
 
 ## Border
+
+Usado em:
+
+• bordas
+• divisores
+• inputs
 
 HEX
 
@@ -234,15 +102,15 @@ HEX
 #27272A
 ```
 
-Uso:
-
-- bordas
-- divisores
-- inputs
-
 ---
 
 ## Texto Principal
+
+Usado em:
+
+• títulos
+• KPIs
+• conteúdo principal
 
 HEX
 
@@ -250,15 +118,15 @@ HEX
 #FFFFFF
 ```
 
-Uso:
-
-Títulos
-
-Conteúdo principal
-
 ---
 
 ## Texto Secundário
+
+Usado em:
+
+• descrições
+• subtítulos
+• legendas
 
 HEX
 
@@ -266,17 +134,14 @@ HEX
 #A1A1AA
 ```
 
-Uso:
-
-Descrições
-
-Legendas
-
-Informações auxiliares
-
 ---
 
 ## Texto Fraco
+
+Usado em:
+
+• placeholders
+• informações auxiliares
 
 HEX
 
@@ -284,15 +149,26 @@ HEX
 #71717A
 ```
 
-Uso:
+---
 
-Placeholder
+# Cor da Marca
 
-Informações menos importantes
+A cor principal representa a identidade da Autonova.
+
+Ela deve aparecer apenas em elementos de destaque.
+
+Nunca deve dominar a interface.
 
 ---
 
-# Cor Primária
+## Primary
+
+Usado em:
+
+• botão principal
+• links importantes
+• foco
+• switches ativos
 
 HEX
 
@@ -300,18 +176,14 @@ HEX
 #22C55E
 ```
 
-Representa:
-
-- confirmação
-- IA
-- automação
-- sucesso
-
-É a cor principal da marca.
-
 ---
 
-## Hover Primário
+## Primary Hover
+
+Usado em:
+
+• hover do botão principal
+• estados ativos
 
 HEX
 
@@ -321,23 +193,30 @@ HEX
 
 ---
 
-## Verde Claro
+# Estados
+
+## Success
+
+Usado em:
+
+• confirmações
+• status positivos
 
 HEX
 
 ```text
-#4ADE80
+#22C55E
 ```
-
-Uso:
-
-Indicadores positivos.
-
-Nunca utilizar em botões.
 
 ---
 
-# Erro
+## Danger
+
+Usado em:
+
+• erros
+• exclusões
+• ações destrutivas
 
 HEX
 
@@ -345,17 +224,14 @@ HEX
 #DC2626
 ```
 
-Uso:
-
-Mensagens de erro.
-
-Campos inválidos.
-
-Ações destrutivas.
-
 ---
 
-# Aviso
+## Warning
+
+Usado em:
+
+• alertas
+• atenção
 
 HEX
 
@@ -363,15 +239,15 @@ HEX
 #F59E0B
 ```
 
-Uso:
-
-Alertas.
-
-Confirmações intermediárias.
-
 ---
 
-# Informação
+## Info
+
+Usado em:
+
+• informações
+• notificaçõe
+• links
 
 HEX
 
@@ -379,550 +255,342 @@ HEX
 #2563EB
 ```
 
-Uso:
-
-Informações.
-
-Links.
-
-Avisos neutros.
-
----
-
-# Glass
-
-Opacidade
-
-12%
-
-Blur
-
-24px
-
-Nunca utilizar opacidade maior que 18%.
-
----
-
-# Sombras
-
-As sombras sempre serão discretas.
-
-Nunca utilizar sombras extremamente escuras.
-
-Preferir profundidade através de blur.
-
----
-
-# Gradientes
-
-A plataforma utiliza gradientes apenas em:
-
-Landing Page
-
-Hero Section
-
-Elementos promocionais
-
-Nunca utilizar gradientes em:
-
-Botões
-
-Inputs
-
-Cards
-
-Dashboard
-
-Modais
-
----
-
-# Estados
-
-Hover
-
-Sempre 200ms.
-
----
-
-Active
-
-Escurecer aproximadamente 8%.
-
----
-
-Disabled
-
-Opacidade 50%.
-
-Cursor:
-
-not-allowed
-
----
-
-Loading
-
-Nunca substituir componentes.
-
-Sempre utilizar indicador interno.
-
----
-
-# Regra
-
-Toda nova cor deverá ser adicionada primeiro neste documento.
-
-Somente depois poderá ser utilizada no CSS.
-
-# PARTE 2 - Layout, Tipografia e Espaçamentoss
-
----
-
 # Tipografia
 
-A Autonova utiliza apenas duas famílias tipográficas.
-
-Nunca utilizar outras fontes.
-
----
+Define a hierarquia visual da plataforma.
 
 ## Fonte Principal
-
-Orbitron
-
-Uso:
-
-- Logo
-- Títulos
-- Métricas
-- KPIs
-- Cabeçalhos
-
----
+Usado em: Logo, títulos, métricas
+Fonte: Orbitron
 
 ## Fonte Secundária
-
-System UI
-
-Fallback:
-
-- Inter
-- Segoe UI
-- Arial
-- sans-serif
-
-Uso:
-
-- textos
-- formulários
-- tabelas
-- descrições
-
----
-
-# Hierarquia Tipográfica
-
-## H1
-
-Uso:
-
-Título principal da página.
-
-Exemplo:
-
-Dashboard
-
-Clientes
-
-Agenda
-
-Tamanho:
-
-48px
-
-Peso:
-
-700
-
-Line-height:
-
-56px
-
----
-
-## H2
-
-Uso:
-
-Título de seção.
-
-Exemplo:
-
-Resumo Financeiro
-
-Últimos Agendamentos
-
-Produtos
-
-Tamanho:
-
-36px
-
-Peso:
-
-700
-
-Line-height:
-
-44px
-
----
-
-## H3
-
-Uso:
-
-Título de Cards.
-
-Tamanho:
-
-28px
-
-Peso:
-
-600
-
-Line-height:
-
-36px
-
----
-
-## H4
-
-Uso:
-
-Título de Widgets.
-
-Tamanho:
-
-22px
-
-Peso:
-
-600
-
----
-
-## Texto Principal
-
-16px
-
-Peso:
-
-400
-
-Line-height:
-
-28px
-
----
-
-## Texto Pequeno
-
-14px
-
-Peso:
-
-400
-
----
-
-## Legenda
-
-12px
-
-Peso:
-
-400
-
-Cor:
-
-Texto Fraco
+Usado em: textos, inputs, tabelas
+Fonte: System UI (fallback: Inter, Segoe UI, Arial)
+
+## Escala
+H1: 48px • 700
+H2: 36px • 700
+H3: 28px • 600
+H4: 22px • 600
+Body: 16px • 400
+Small: 14px • 400
+Caption: 12px • 400
 
 ---
 
 # Espaçamentos
 
-Nenhum componente poderá utilizar espaçamentos arbitrários.
+Todos os componentes seguem a mesma escala.
 
-Toda interface utilizará apenas esta escala.
+Escala oficial:
+4 • 8 • 12 • 16 • 24 • 32 • 48 • 64 • 96 • 128
 
-4px
-
-8px
-
-12px
-
-16px
-
-24px
-
-32px
-
-48px
-
-64px
-
-96px
-
-128px
-
-Nunca utilizar:
-
-13px
-
-17px
-
-21px
-
-etc.
+Nunca utilizar medidas arbitrárias.
 
 ---
 
 # Radius
 
-Todos os componentes utilizam radius consistente.
+Padroniza todos os componentes.
 
-Input
-
-12px
-
----
-
-Botão
-
-12px
+Input: 12px
+Button: 12px
+Badge: 10px
+Card: 20px
+Modal: 24px
+Sidebar: 24px
 
 ---
 
-Badge
+# Botões
 
-10px
+Todos possuem altura fixa de 44px.
+
+Primary
+Usado em: ação principal
+Background: Primary
+Hover: Primary Hover
+
+Secondary
+Usado em: ações secundárias
+Background: Surface
+Border: Border
+
+Danger
+Usado em: excluir, remover
+Background: Danger
+
+Ghost
+Usado em: links internos
+Sem background
+
+Estados
+Hover: escurecer 8%
+Active: escurecer novamente
+Disabled: opacity 50%
+Loading: spinner interno
 
 ---
 
-Card
+# Inputs
 
+Todos seguem o mesmo padrão.
+
+Altura: 44px
+Radius: 12px
+Padding: 16px
+Border: Border
+
+Placeholder
+Texto Fraco
+
+Focus
+Border: Primary
+
+Erro
+Border: Danger
+Mensagem abaixo do campo
+
+Readonly
+Background Surface
+
+---
+
+# Select
+
+Mesmo padrão visual do Input.
+
+---
+
+# Textarea
+
+Mesmo padrão do Input.
+Altura mínima: 120px
+Resize: vertical
+
+---
+
+# Checkbox
+
+Radius: 6px
+Cor: Primary
+
+---
+
+# Switch
+
+Off: Border
+On: Primary
+Transition: 200ms
+
+---
+
+# Cards
+
+Usado em todo Dashboard.
+
+Background: Surface
+Border: Border
+Radius: 20px
+Padding: 24px
+
+---
+
+# Modais
+
+Background: Surface
+Radius: 24px
+Padding: 32px
+Overlay: 60%
+Blur: 24px
+
+---
+
+# Badges
+
+Altura: 28px
+Radius: 10px
+Padding: 4px 10px
+
+Tipos:
+Success
+Danger
+Warning
+Info
+Neutral
+
+---
+
+# Toasts
+
+Posição: topo direito
+Largura: 360px
+Radius: 16px
+Duração: 4 segundos
+Animação: Slide + Fade
+
+---
+
+# Loading
+
+Sempre utilizar Spinner SVG.
+Nunca utilizar GIF.
+
+Cor: Primary
+
+---
+
+# Ícones
+
+Biblioteca oficial:
+Lucide React
+
+Tamanho padrão:
 20px
 
----
-
-Modal
-
-24px
+Nunca misturar bibliotecas.
 
 ---
 
-Sidebar
+# Layout
 
-24px
+Container padrão:
+1440px
 
----
+Login:
+460px
 
-# Alturas
+Cadastro:
+520px
 
-Input
+Dashboard:
+100%
 
-44px
+Grid
+Desktop: 12 colunas
+Tablet: 8 colunas
+Mobile: 4 colunas
 
----
-
-Botão
-
-44px
-
----
-
-Select
-
-44px
-
----
-
-Header
-
+Header:
 72px
 
----
-
-Sidebar
-
+Sidebar:
 100vh
 
 ---
 
-# Grid
+# Dashboard
 
-Desktop
+Toda tela administrativa deve seguir esta estrutura.
 
-12 colunas
-
----
-
-Tablet
-
-8 colunas
-
----
-
-Mobile
-
-4 colunas
-
----
-
-# Containers
-
-Página padrão
-
-max-width:
-
-1440px
-
----
-
-Formulários
-
-max-width:
-
-480px
-
----
-
-Login
-
-max-width:
-
-460px
-
----
-
-Cadastro
-
-max-width:
-
-520px
-
----
-
-Dashboard
-
-width:
-
-100%
-
----
-
-# Breakpoints
-
-Mobile
-
-0 → 639px
-
----
-
-Small Tablet
-
-640px
-
----
-
-Tablet
-
-768px
-
----
-
-Notebook
-
-1024px
-
----
-
-Desktop
-
-1280px
-
----
-
-Large Desktop
-
-1536px
-
----
-
-# Padding Global
-
-Páginas
-
-32px
-
----
-
+Header
+Sidebar
+KPIs
 Cards
-
-24px
-
----
-
-Inputs
-
-16px
-
----
-
+Gráficos
+Tabelas
+Filtros
+Paginação
 Modais
 
-32px
+Nunca empilhar informações desnecessariamente.
 
 ---
 
-# Margens
+# Formulários
 
-Entre Cards
+Todos utilizam:
 
-24px
+React Hook Form
+Zod
+Axios
 
----
-
-Entre Seções
-
-48px
-
----
-
-Entre Blocos Grandes
-
-64px
+Label acima do campo.
+Mensagens abaixo do campo.
+Focus verde.
+Erro vermelho.
 
 ---
 
 # Responsividade
 
-Todo componente deve ser desenvolvido Mobile First.
+Mobile First.
 
-Nunca criar telas exclusivas para Desktop.
+Breakpoints
 
-A interface sempre deve crescer naturalmente.
+640px
+768px
+1024px
+1280px
+1536px
 
 ---
 
-# Regra
+# Animações
 
-Nenhum componente poderá definir tamanhos próprios.
+Duração padrão:
+200ms
 
-Toda dimensão deverá seguir esta documentação.
+Curva:
+ease-in-out
 
-Caso seja necessária uma nova medida, primeiro ela deve ser adicionada aqui.
+Nunca utilizar:
+bounce
+shake
+flash
+elastic
+
+---
+
+# Scrollbar
+
+Scrollbar discreta.
+
+Background: Surface
+Thumb: Border
+Hover: Primary
+
+---
+
+# Acessibilidade
+
+Todos os componentes devem possuir:
+
+Label
+Focus visível
+Contraste adequado
+Navegação por teclado
+ARIA quando necessário
+
+---
+
+# Convenções
+
+Sempre reutilizar componentes.
+
+Nunca duplicar estilos.
+
+Nunca utilizar cores fora da paleta.
+
+Nunca definir tamanhos arbitrários.
+
+Sempre utilizar tokens definidos neste documento.
+
+---
+
+# Checklist
+
+Antes de finalizar qualquer tela verificar:
+
+☐ Responsivo
+☐ Dark Theme
+☐ Hover
+☐ Focus
+☐ Loading
+☐ Estados de erro
+☐ Componentes reutilizados
+☐ Espaçamentos corretos
+☐ Tipografia correta
+☐ Paleta respeitada
+☐ Sem estilos inline
+☐ Sem cores arbitrárias

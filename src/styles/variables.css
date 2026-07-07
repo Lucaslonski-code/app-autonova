@@ -1,0 +1,92 @@
+
+:root {
+
+/* ============================
+   COLORS
+============================ */
+
+--background: #09090B;
+--background-secondary: #111827;
+--surface: #18181B;
+--border: #27272A;
+
+--text-primary: #FFFFFF;
+--text-secondary: #A1A1AA;
+--text-muted: #71717A;
+
+/* ============================
+   BRAND
+============================ */
+
+--primary: #22C55E;
+--primary-hover: #16A34A;
+
+/* ============================
+   STATUS
+============================ */
+
+--success: #22C55E;
+--danger: #DC2626;
+--warning: #F59E0B;
+--info: #2563EB;
+
+/* ============================
+   RADIUS
+============================ */
+
+--radius-input: 12px;
+--radius-button: 12px;
+--radius-badge: 10px;
+--radius-card: 20px;
+--radius-modal: 24px;
+
+/* ============================
+   SPACING
+============================ */
+
+--space-1: 4px;
+--space-2: 8px;
+--space-3: 12px;
+--space-4: 16px;
+--space-5: 24px;
+--space-6: 32px;
+--space-7: 48px;
+--space-8: 64px;
+--space-9: 96px;
+--space-10: 128px;
+
+/* ============================
+   TRANSITIONS
+============================ */
+
+--transition-fast: .15s;
+--transition-default: .20s;
+--transition-slow: .30s;
+
+/* ============================
+   SHADOWS
+============================ */
+
+--shadow-sm:
+0 2px 6px rgba(0,0,0,.15);
+
+--shadow-md:
+0 6px 18px rgba(0,0,0,.20);
+
+--shadow-lg:
+0 12px 32px rgba(0,0,0,.28);
+
+/* ============================
+   GLASS
+============================ */
+
+--glass-bg:
+rgba(255,255,255,.04);
+
+--glass-border:
+rgba(255,255,255,.06);
+
+--glass-blur:
+24px;
+
+}
