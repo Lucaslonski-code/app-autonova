@@ -475,3 +475,454 @@ Toda nova cor deverá ser adicionada primeiro neste documento.
 
 Somente depois poderá ser utilizada no CSS.
 
+# PARTE 2 - Layout, Tipografia e Espaçamentoss
+
+---
+
+# Tipografia
+
+A Autonova utiliza apenas duas famílias tipográficas.
+
+Nunca utilizar outras fontes.
+
+---
+
+## Fonte Principal
+
+Orbitron
+
+Uso:
+
+- Logo
+- Títulos
+- Métricas
+- KPIs
+- Cabeçalhos
+
+---
+
+## Fonte Secundária
+
+System UI
+
+Fallback:
+
+- Inter
+- Segoe UI
+- Arial
+- sans-serif
+
+Uso:
+
+- textos
+- formulários
+- tabelas
+- descrições
+
+---
+
+# Hierarquia Tipográfica
+
+## H1
+
+Uso:
+
+Título principal da página.
+
+Exemplo:
+
+Dashboard
+
+Clientes
+
+Agenda
+
+Tamanho:
+
+48px
+
+Peso:
+
+700
+
+Line-height:
+
+56px
+
+---
+
+## H2
+
+Uso:
+
+Título de seção.
+
+Exemplo:
+
+Resumo Financeiro
+
+Últimos Agendamentos
+
+Produtos
+
+Tamanho:
+
+36px
+
+Peso:
+
+700
+
+Line-height:
+
+44px
+
+---
+
+## H3
+
+Uso:
+
+Título de Cards.
+
+Tamanho:
+
+28px
+
+Peso:
+
+600
+
+Line-height:
+
+36px
+
+---
+
+## H4
+
+Uso:
+
+Título de Widgets.
+
+Tamanho:
+
+22px
+
+Peso:
+
+600
+
+---
+
+## Texto Principal
+
+16px
+
+Peso:
+
+400
+
+Line-height:
+
+28px
+
+---
+
+## Texto Pequeno
+
+14px
+
+Peso:
+
+400
+
+---
+
+## Legenda
+
+12px
+
+Peso:
+
+400
+
+Cor:
+
+Texto Fraco
+
+---
+
+# Espaçamentos
+
+Nenhum componente poderá utilizar espaçamentos arbitrários.
+
+Toda interface utilizará apenas esta escala.
+
+4px
+
+8px
+
+12px
+
+16px
+
+24px
+
+32px
+
+48px
+
+64px
+
+96px
+
+128px
+
+Nunca utilizar:
+
+13px
+
+17px
+
+21px
+
+etc.
+
+---
+
+# Radius
+
+Todos os componentes utilizam radius consistente.
+
+Input
+
+12px
+
+---
+
+Botão
+
+12px
+
+---
+
+Badge
+
+10px
+
+---
+
+Card
+
+20px
+
+---
+
+Modal
+
+24px
+
+---
+
+Sidebar
+
+24px
+
+---
+
+# Alturas
+
+Input
+
+44px
+
+---
+
+Botão
+
+44px
+
+---
+
+Select
+
+44px
+
+---
+
+Header
+
+72px
+
+---
+
+Sidebar
+
+100vh
+
+---
+
+# Grid
+
+Desktop
+
+12 colunas
+
+---
+
+Tablet
+
+8 colunas
+
+---
+
+Mobile
+
+4 colunas
+
+---
+
+# Containers
+
+Página padrão
+
+max-width:
+
+1440px
+
+---
+
+Formulários
+
+max-width:
+
+480px
+
+---
+
+Login
+
+max-width:
+
+460px
+
+---
+
+Cadastro
+
+max-width:
+
+520px
+
+---
+
+Dashboard
+
+width:
+
+100%
+
+---
+
+# Breakpoints
+
+Mobile
+
+0 → 639px
+
+---
+
+Small Tablet
+
+640px
+
+---
+
+Tablet
+
+768px
+
+---
+
+Notebook
+
+1024px
+
+---
+
+Desktop
+
+1280px
+
+---
+
+Large Desktop
+
+1536px
+
+---
+
+# Padding Global
+
+Páginas
+
+32px
+
+---
+
+Cards
+
+24px
+
+---
+
+Inputs
+
+16px
+
+---
+
+Modais
+
+32px
+
+---
+
+# Margens
+
+Entre Cards
+
+24px
+
+---
+
+Entre Seções
+
+48px
+
+---
+
+Entre Blocos Grandes
+
+64px
+
+---
+
+# Responsividade
+
+Todo componente deve ser desenvolvido Mobile First.
+
+Nunca criar telas exclusivas para Desktop.
+
+A interface sempre deve crescer naturalmente.
+
+---
+
+# Regra
+
+Nenhum componente poderá definir tamanhos próprios.
+
+Toda dimensão deverá seguir esta documentação.
+
+Caso seja necessária uma nova medida, primeiro ela deve ser adicionada aqui.
