@@ -1,32 +1,26 @@
 
 import { ButtonHTMLAttributes } from "react";
-import { clsx } from "clsx";
 
-interface ButtonProps
+type Variant =
+  | "primary"
+  | "secondary"
+  | "danger"
+  | "ghost";
+
+interface Props
   extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
+  variant?: Variant;
 }
 
 export function Button({
   variant = "primary",
-  className,
+  className = "",
   ...props
-}: ButtonProps) {
+}: Props) {
   return (
     <button
-      className={clsx(
-        "h-11 rounded-xl px-4 font-medium transition-all",
-
-        variant === "primary" &&
-          "bg-green-600 text-white hover:bg-green-500",
-
-        variant === "secondary" &&
-          "bg-zinc-800 text-white hover:bg-zinc-700",
-
-        className
-      )}
+      className={`btn btn-${variant} ${className}`}
       {...props}
     />
   );
 }
-

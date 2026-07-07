@@ -3,15 +3,13 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
-  className?: string;
 }
 
-export function Card({
+export function Container({
   children,
-  className = "",
 }: Props) {
   return (
-    <div className={`card ${className}`}>
+    <div className="max-page w-full">
       {children}
     </div>
   );

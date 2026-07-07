@@ -1,0 +1,209 @@
+
+/* ===========================
+   FONTES
+=========================== */
+
+@import "@fontsource/orbitron/700.css";
+@import "@fontsource/orbitron/600.css";
+@import "@fontsource/orbitron/500.css";
+
+/* ===========================
+   BASE
+=========================== */
+
+html {
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text-primary);
+
+    font-size:16px;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+   TÍTULOS
+=========================== */
+
+h1,
+h2,
+h3,
+h4{
+
+    font-family:"Orbitron",sans-serif;
+
+    color:var(--text-primary);
+
+    margin:0;
+
+}
+
+h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    line-height:56px;
+
+}
+
+h2{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    line-height:44px;
+
+}
+
+h3{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    line-height:36px;
+
+}
+
+h4{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    line-height:30px;
+
+}
+
+/* ===========================
+   PARÁGRAFOS
+=========================== */
+
+p{
+
+    margin:0;
+
+    font-size:16px;
+
+    color:var(--text-primary);
+
+}
+
+/* ===========================
+   TEXTOS
+=========================== */
+
+.text-body{
+
+    font-size:16px;
+
+    font-weight:400;
+
+}
+
+.text-small{
+
+    font-size:14px;
+
+    font-weight:400;
+
+}
+
+.text-caption{
+
+    font-size:12px;
+
+    color:var(--text-muted);
+
+}
+
+/* ===========================
+   PESOS
+=========================== */
+
+.font-light{
+
+    font-weight:300;
+
+}
+
+.font-regular{
+
+    font-weight:400;
+
+}
+
+.font-medium{
+
+    font-weight:500;
+
+}
+
+.font-semibold{
+
+    font-weight:600;
+
+}
+
+.font-bold{
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   CORES
+=========================== */
+
+.text-primary{
+
+    color:var(--text-primary);
+
+}
+
+.text-secondary{
+
+    color:var(--text-secondary);
+
+}
+
+.text-muted{
+
+    color:var(--text-muted);
+
+}
+
+.text-success{
+
+    color:var(--success);
+
+}
+
+.text-danger{
+
+    color:var(--danger);
+
+}
+
+.text-warning{
+
+    color:var(--warning);
+
+}
+
+.text-info{
+
+    color:var(--info);
+
+}
+
