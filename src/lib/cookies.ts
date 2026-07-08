@@ -1,21 +1,40 @@
 
 import Cookies from "js-cookie";
 
-const TOKEN_KEY = "autonova_token";
+const ACCESS_TOKEN="accessToken";
 
-export const cookieService = {
-  getToken() {
-    return Cookies.get(TOKEN_KEY);
-  },
+export const cookieService={
 
-  setToken(token: string) {
-    Cookies.set(TOKEN_KEY, token, {
-      expires: 7,
-      sameSite: "strict",
-    });
-  },
+    getAccessToken(){
 
-  removeToken() {
-    Cookies.remove(TOKEN_KEY);
-  },
+        return Cookies.get(ACCESS_TOKEN);
+
+    },
+
+    setAccessToken(token:string){
+
+        Cookies.set(
+
+            ACCESS_TOKEN,
+
+            token,
+
+            {
+
+                secure:true,
+
+                sameSite:"strict"
+
+            }
+
+        );
+
+    },
+
+    removeAccessToken(){
+
+        Cookies.remove(ACCESS_TOKEN);
+
+    }
+
 };
