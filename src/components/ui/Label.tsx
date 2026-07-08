@@ -1,15 +1,24 @@
 
-import { LabelHTMLAttributes } from "react";
-
-type Props =
-  LabelHTMLAttributes<HTMLLabelElement>;
-
-export function Label(props: Props) {
-  return (
-    <label
-      className="text-small"
-      {...props}
-    />
-  );
+interface LabelProps {
+  children: React.ReactNode;
+  htmlFor?: string;
+  required?: boolean;
 }
 
+export function Label({
+  children,
+  htmlFor,
+  required = false,
+}: LabelProps) {
+  return (
+    <label
+      htmlFor={htmlFor}
+      className="font-medium text-sm text-primary"
+    >
+      {children}
+      {required && (
+        <span className="text-danger ml-1">*</span>
+      )}
+    </label>
+  );
+}

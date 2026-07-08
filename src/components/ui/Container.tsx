@@ -1,15 +1,13 @@
 
 import { ReactNode } from "react";
 
-interface Props {
+interface ContainerProps {
   children: ReactNode;
 }
 
-export function Container({
-  children,
-}: Props) {
+export function Container({ children }: ContainerProps) {
   return (
-    <div className="max-page w-full">
+    <div className="mx-auto w-full max-w-[1600px] px-8">
       {children}
     </div>
   );

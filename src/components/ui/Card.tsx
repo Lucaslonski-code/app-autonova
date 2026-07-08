@@ -1,17 +1,23 @@
 
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-interface Props {
+interface CardProps {
   children: ReactNode;
   className?: string;
 }
 
 export function Card({
   children,
-  className = "",
-}: Props) {
+  className,
+}: CardProps) {
   return (
-    <div className={`card ${className}`}>
+    <div
+      className={cn(
+        "rounded-card border border-border bg-surface p-6 shadow-md",
+        className
+      )}
+    >
       {children}
     </div>
   );

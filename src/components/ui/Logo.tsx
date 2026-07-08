@@ -1,16 +1,18 @@
 
 export function Logo() {
-  return (
-    <h1
-      className="
-      text-4xl
-      font-bold
-      tracking-wider
-      text-white
-      "
-    >
-      AUTONOVA
-    </h1>
-  );
+    return (
+        <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center font-bold text-black">
+                A
+            </div>
+
+            <div>
+                <h3>AutoNova</h3>
+                <small className="text-muted">
+                    Business Platform
+                </small>
+            </div>
+        </div>
+    );
 }
 
