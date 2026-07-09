@@ -1,17 +1,17 @@
 
 import { PageHeader } from "@/components/layout/PageHeader";
 
-export default function PerfilPage(){
+export default function DashboardPage() {
 
-    return(
+    return (
 
         <>
 
             <PageHeader
 
-                title="Perfil"
+                title="Dashboard"
 
-                description="Informações da conta."
+                description="Visão geral do sistema."
 
             />
 

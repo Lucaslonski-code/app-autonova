@@ -1,25 +1,23 @@
 
 interface Props {
-  title: string;
-  subtitle?: string;
+    title: string;
+    description?: string;
 }
 
 export function PageHeader({
-  title,
-  subtitle,
+    title,
+    description,
 }: Props) {
-  return (
-    <div className="mb-8">
+    return (
+        <header className="mb-10">
+            <h1>{title}</h1>
 
-      <h1>{title}</h1>
-
-      {subtitle && (
-        <p className="text-secondary">
-          {subtitle}
-        </p>
-      )}
-
-    </div>
-  );
+            {description && (
+                <p className="text-secondary mt-2">
+                    {description}
+                </p>
+            )}
+        </header>
+    );
 }
 

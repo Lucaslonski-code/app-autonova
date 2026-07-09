@@ -1,33 +1,28 @@
-import { ReactNode } from "react";
 
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import type { ReactNode } from "react";
 
-interface DashboardLayoutProps {
-  children: ReactNode;
+import { MainLayout } from "@/components/layout/MainLayout";
+
+interface Props{
+
+    children:ReactNode;
+
 }
 
 export default function DashboardLayout({
-  children,
-}: DashboardLayoutProps) {
-  return (
-    <div className="flex min-h-screen">
 
-      <Sidebar />
+    children,
 
-      <div className="flex flex-1 flex-col">
+}:Props){
 
-        <Header />
+    return(
 
-        <main className="flex-1 p-8">
-          {children}
-        </main>
+        <MainLayout>
 
-        <Footer />
+            {children}
 
-      </div>
+        </MainLayout>
 
-    </div>
-  );
+    );
+
 }
