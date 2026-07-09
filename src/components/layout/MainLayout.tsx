@@ -1,30 +1,39 @@
 
+import type { ReactNode } from "react";
+
 import { Sidebar } from "./Sidebar";
+
 import { Topbar } from "./Topbar";
 
-interface Props {
-  children: React.ReactNode;
+interface Props{
+
+    children:ReactNode;
+
 }
 
 export function MainLayout({
-  children,
-}: Props) {
-  return (
-    <div className="flex">
 
-      <Sidebar />
+    children,
 
-      <div className="flex-1">
+}:Props){
 
-        <Topbar />
+    return(
 
-        <main className="p-8">
-          {children}
-        </main>
+        <div className="layout">
 
-      </div>
+            <Sidebar/>
 
-    </div>
-  );
+            <main className="content">
+
+                <Topbar/>
+
+                {children}
+
+            </main>
+
+        </div>
+
+    );
+
 }
 

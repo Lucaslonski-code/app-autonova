@@ -1,11 +1,36 @@
 
-export function Topbar() {
-  return (
-    <header className="h-16 border-b border-default bg-surface px-8 flex items-center justify-between">
+import { Bell } from "lucide-react";
 
-      <h3>AutoNova</h3>
+import { Avatar } from "@/components/ui/Avatar";
+import { Breadcrumb } from "@/components/layout/Breadcrump";
+
+export function Topbar() {
+
+  return (
+
+    <header className="topbar">
+
+      <div>
+
+        <Breadcrumb />
+
+      </div>
+
+      <div className="topbar-actions">
+
+        <button className="icon-button">
+
+          <Bell size={20} />
+
+        </button>
+
+        <Avatar />
+
+      </div>
 
     </header>
+
   );
+
 }
 

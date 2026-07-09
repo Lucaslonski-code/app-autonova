@@ -1,25 +1,21 @@
 
-import Link from "next/link";
+import { Logo } from "@/components/ui/Logo";
 
-export function Sidebar() {
-  return (
-    <aside className="w-72 min-h-screen bg-surface border-r border-default p-6 flex flex-col gap-4">
+import { NavMenu } from "@/components/navigation/NavMenu";
 
-      <Link href="/">Dashboard</Link>
+export function Sidebar(){
 
-      <Link href="/empresas">Empresas</Link>
+    return(
 
-      <Link href="/clientes">Clientes</Link>
+        <aside className="sidebar">
 
-      <Link href="/servicos">Serviços</Link>
+            <Logo/>
 
-      <Link href="/agendamentos">Agendamentos</Link>
+            <NavMenu/>
 
-      <Link href="/usuarios">Usuários</Link>
+        </aside>
 
-      <Link href="/configuracoes">Configurações</Link>
+    );
 
-    </aside>
-  );
 }
 

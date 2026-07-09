@@ -1,22 +1,23 @@
 
-interface Props {
-  items: string[];
-}
+"use client";
 
-export function Breadcrumb({
-  items,
-}: Props) {
-  return (
-    <div className="flex gap-2 text-secondary text-sm">
+import { usePathname } from "next/navigation";
 
-      {items.map((item, index) => (
-        <span key={item}>
-          {index > 0 && " / "}
-          {item}
+export function Breadcrumb(){
+
+    const pathname=usePathname();
+
+    const page=pathname.split("/").pop() || "dashboard";
+
+    return(
+
+        <span className="text-secondary">
+
+            {page.charAt(0).toUpperCase()+page.slice(1)}
+
         </span>
-      ))}
 
-    </div>
-  );
+    );
+
 }
 
