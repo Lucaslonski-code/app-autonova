@@ -1,60 +1,23 @@
 
 import Link from "next/link";
 
-const menus = [
-  {
-    nome: "Dashboard",
-    href: "/dashboard",
-  },
-  {
-    nome: "Empresas",
-    href: "/empresas",
-  },
-  {
-    nome: "Clientes",
-    href: "/clientes",
-  },
-  {
-    nome: "Serviços",
-    href: "/servicos",
-  },
-  {
-    nome: "Agendamentos",
-    href: "/agendamentos",
-  },
-  {
-    nome: "Financeiro",
-    href: "/financeiro",
-  },
-  {
-    nome: "Perfil",
-    href: "/perfil",
-  },
-];
-
 export function Sidebar() {
   return (
-    <aside className="flex w-64 flex-col border-r border-border bg-background-secondary p-8">
+    <aside className="w-72 min-h-screen bg-surface border-r border-default p-6 flex flex-col gap-4">
 
-      <h3 className="mb-10">
-        AutoNova
-      </h3>
+      <Link href="/">Dashboard</Link>
 
-      <nav className="flex flex-col gap-5">
+      <Link href="/empresas">Empresas</Link>
 
-        {menus.map((menu) => (
+      <Link href="/clientes">Clientes</Link>
 
-          <Link
-            key={menu.href}
-            href={menu.href}
-            className="transition-colors hover:text-primary"
-          >
-            {menu.nome}
-          </Link>
+      <Link href="/servicos">Serviços</Link>
 
-        ))}
+      <Link href="/agendamentos">Agendamentos</Link>
 
-      </nav>
+      <Link href="/usuarios">Usuários</Link>
+
+      <Link href="/configuracoes">Configurações</Link>
 
     </aside>
   );

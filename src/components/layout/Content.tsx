@@ -3,13 +3,13 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function Section({
+export function Content({
   children,
 }: Props) {
   return (
-    <section className="mb-10">
+    <div className="space-y-6">
       {children}
-    </section>
+    </div>
   );
 }
 
