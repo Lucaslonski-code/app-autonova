@@ -84,13 +84,25 @@
 
 .card{
 
-    background:var(--surface);
+    background:#111827;
 
     border:1px solid var(--border);
 
-    border-radius:var(--radius-card);
+    border-radius:20px;
 
-    padding:var(--space-5);
+    padding:24px;
+
+    transition:.18s;
+
+}
+
+.card:hover{
+
+    border-color:rgba(34,197,94,.35);
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-md);
 
 }
 
@@ -202,7 +214,9 @@
 
 .btn-primary:hover{
 
-    background:var(--primary-hover);
+    transform:translateY(-1px);
+
+    box-shadow:0 0 18px rgba(34,197,94,.22);
 
 }
 
@@ -294,6 +308,8 @@
 
     border-color:var(--primary);
 
+    box-shadow:0 0 0 4px rgba(34,197,94,.12);
+
 }
 
 .textarea{
@@ -312,21 +328,11 @@
 
 .badge{
 
-    height:28px;
+    border-radius:999px;
 
-    padding:4px 10px;
+    font-weight:600;
 
-    border-radius:var(--radius-badge);
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:12px;
-
-    font-weight:500;
+    letter-spacing:.03em;
 
 }
 
