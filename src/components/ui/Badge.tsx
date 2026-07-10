@@ -1,26 +1,33 @@
 
-import { ReactNode } from "react";
+interface Props{
 
-type Variant =
-  | "success"
-  | "danger"
-  | "warning"
-  | "info"
-  | "neutral";
+    children:React.ReactNode;
 
-interface Props {
-  children: ReactNode;
-  variant?: Variant;
+    variant?:
+    |"success"
+    |"danger"
+    |"warning"
+    |"info"
+    |"neutral";
+
 }
 
-export function Badge({
-  children,
-  variant = "neutral",
-}: Props) {
-  return (
-    <span className={`badge badge-${variant}`}>
-      {children}
-    </span>
-  );
-}
+export default function Badge({
 
+    children,
+
+    variant="neutral",
+
+}:Props){
+
+    return(
+
+        <span className={`badge badge-${variant}`}>
+
+            {children}
+
+        </span>
+
+    );
+
+}

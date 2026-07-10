@@ -275,25 +275,37 @@ padding:32px;
 
 }
 
+/* ===========================================
+   DASHBOARD HERO
+=========================================== */
+
 .dashboard-hero{
 
 display:flex;
 
-align-items:center;
-
 justify-content:space-between;
 
-padding:42px;
+align-items:center;
 
-background:linear-gradient(180deg,#111827,#09090B);
+gap:48px;
+
+padding:42px;
 
 border:1px solid var(--border);
 
 border-radius:var(--radius-card);
 
-margin-bottom:32px;
+background:
 
-box-shadow:var(--shadow-sm);
+linear-gradient(
+180deg,
+#101828,
+#09090B
+);
+
+box-shadow:var(--shadow-md);
+
+margin-bottom:32px;
 
 }
 
@@ -313,9 +325,37 @@ color:var(--text-secondary);
 
 }
 
-.dashboard-hero .badge{
+.dashboard-hero-actions{
 
-margin-bottom:10px;
+display:flex;
+
+gap:16px;
+
+align-items:center;
+
+}
+
+@media(max-width:960px){
+
+.dashboard-hero{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.dashboard-hero-actions{
+
+width:100%;
+
+}
+
+.dashboard-hero-actions button{
+
+flex:1;
+
+}
 
 }
 
