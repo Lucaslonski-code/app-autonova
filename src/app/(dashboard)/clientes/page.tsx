@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/Card";
 
 import { Button } from "@/components/ui/Button";
 
-import EmptyState from "@/components/layout/EmptyState";
+import { EmptyState } from "@/components/ui/EmptyState";
 
 import { useClientes } from "@/hooks/useClientes";
 
