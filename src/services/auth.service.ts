@@ -1,5 +1,5 @@
 
-import { api } from "./api";
+import { api } from "@/lib/api";
 
 export async function login(email: string, senha: string) {
   const response = await api.post("/signin", {
