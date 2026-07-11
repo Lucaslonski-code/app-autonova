@@ -1,20 +1,38 @@
-
 "use client";
 
 import DashboardHero from "@/components/dashboard/DashboardHero";
+
 import { PageHeader } from "@/components/layout/PageHeader";
+
 import { Card } from "@/components/ui/Card";
+
 import { Button } from "@/components/ui/Button";
 
+import { useEmpresas } from "@/hooks/useEmpresas";
+import { useClientes } from "@/hooks/useClientes";
+import { useServicos } from "@/hooks/useServicos";
+import { useAgendamentos } from "@/hooks/useAgendamentos";
+
 export default function DashboardPage() {
+
+    const { empresas } = useEmpresas();
+
+    const { clientes } = useClientes();
+
+    const { servicos } = useServicos();
+
+    const { agendamentos } = useAgendamentos();
 
     return (
 
         <>
 
             <PageHeader
+
                 title="Dashboard"
+
                 description="Visão geral do sistema."
+
             />
 
             <DashboardHero />
@@ -24,11 +42,15 @@ export default function DashboardPage() {
                 <Card>
 
                     <span className="text-caption">
+
                         Empresas
+
                     </span>
 
                     <h2>
-                        12
+
+                        {empresas.length}
+
                     </h2>
 
                 </Card>
@@ -36,11 +58,15 @@ export default function DashboardPage() {
                 <Card>
 
                     <span className="text-caption">
+
                         Clientes
+
                     </span>
 
                     <h2>
-                        284
+
+                        {clientes.length}
+
                     </h2>
 
                 </Card>
@@ -48,11 +74,15 @@ export default function DashboardPage() {
                 <Card>
 
                     <span className="text-caption">
+
                         Serviços
+
                     </span>
 
                     <h2>
-                        36
+
+                        {servicos.length}
+
                     </h2>
 
                 </Card>
@@ -60,11 +90,15 @@ export default function DashboardPage() {
                 <Card>
 
                     <span className="text-caption">
+
                         Agendamentos
+
                     </span>
 
                     <h2>
-                        18
+
+                        {agendamentos.length}
+
                     </h2>
 
                 </Card>
@@ -84,11 +118,15 @@ export default function DashboardPage() {
                     <div className="flex gap-3 mt-4">
 
                         <Button>
+
                             Nova empresa
+
                         </Button>
 
                         <Button variant="secondary">
+
                             Novo cliente
+
                         </Button>
 
                     </div>
@@ -99,21 +137,31 @@ export default function DashboardPage() {
 
                     <h3>
 
-                        Sistema
+                        Status do sistema
 
                     </h3>
 
-                    <p className="text-secondary mt-3">
+                    <div className="mt-4 flex flex-col gap-2">
 
-                        API conectada.
+                        <p>
 
-                    </p>
+                            🟢 Front-end operacional
 
-                    <p className="text-secondary">
+                        </p>
 
-                        Front-end operacional.
+                        <p>
 
-                    </p>
+                            🟢 API conectada
+
+                        </p>
+
+                        <p>
+
+                            🟢 Banco sincronizado
+
+                        </p>
+
+                    </div>
 
                 </Card>
 
