@@ -1,37 +1,55 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Empresa } from "@/types/empresa";
 
 import { listarEmpresas } from "@/services/empresa.service";
 
-export function useEmpresas(){
+export function useEmpresas() {
 
-    const [empresas,setEmpresas]=useState<Empresa[]>([]);
+    const [empresas, setEmpresas] = useState<Empresa[]>([]);
 
-    const [loading,setLoading]=useState(true);
+    const [loading, setLoading] = useState(true);
 
-    async function carregar(){
+    async function carregar() {
 
         setLoading(true);
 
-        const dados=await listarEmpresas();
+        try {
 
-        setEmpresas(dados);
+            const dados = await listarEmpresas();
 
-        setLoading(false);
+            setEmpresas(dados);
+
+        } finally {
+
+            setLoading(false);
+
+        }
 
     }
 
-    return{
+    useEffect(() => {
+
+        async function init() {
+
+            await carregar();
+
+        }
+
+        void init();
+
+    }, []);
+
+    return {
 
         empresas,
 
         loading,
 
-        atualizar:carregar,
+        atualizar: carregar,
 
     };
 

@@ -1,15 +1,14 @@
 
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
+
 import { useEmpresas } from "@/hooks/useEmpresas";
 
 import { PageHeader } from "@/components/layout/PageHeader";
 
 import { Card } from "@/components/ui/Card";
-
 import { Button } from "@/components/ui/Button";
-
-import { EmptyState } from "@/components/ui/EmptyState";
 
 export default function EmpresasPage() {
 
@@ -19,13 +18,29 @@ export default function EmpresasPage() {
 
         loading,
 
+        atualizar, 
+
     } = useEmpresas();
 
-    if (loading) {
+    const [busca, setBusca] = useState("");
 
-        return <p>Carregando</p>;
+    useEffect(() => {
 
-    }
+        void atualizar();
+
+    }, []);
+
+    const lista = useMemo(() => {
+
+        return empresas.filter((empresa) =>
+
+            empresa.nome
+                .toLowerCase()
+                .includes(busca.toLowerCase())
+
+        );
+
+    }, [empresas, busca]);
 
     return (
 
@@ -35,87 +50,158 @@ export default function EmpresasPage() {
 
                 title="Empresas"
 
-                description="Gerencie todas as empresas cadastradas."
+                description="Gerencie as empresas cadastradas."
 
             />
 
-            <div className="page-actions">
+            <Card>
 
-                <Button>
+                <div className="page-actions">
 
-                    Nova Empresa
+                    <input
 
-                </Button>
+                        className="input"
 
-            </div>
+                        placeholder="Pesquisar empresa..."
 
-            {
+                        value={busca}
 
-                empresas.length === 0
-
-                ?
-
-                (
-
-                    <EmptyState
-
-                        title="Nenhuma empresa cadastrada."
-
-                        description="Clique em Nova Empresa para começar."
+                        onChange={(e)=>setBusca(e.target.value)}
 
                     />
 
-                )
+                    <Button>
 
-                :
+                        Nova Empresa
 
-                (
+                    </Button>
 
-                    <div className="grid grid-3 gap-5">
+                </div>
 
-                        {
+                <div className="table-wrapper">
 
-                            empresas.map((empresa)=>(
+                    <table className="table">
 
-                                <Card
+                        <thead>
 
-                                    key={empresa._id}
+                            <tr>
 
-                                >
+                                <th>Nome</th>
 
-                                    <h3>
+                                <th>E-mail</th>
+
+                                <th>Telefone</th>
+
+                                <th>Status</th>
+
+                                <th>Ações</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            {loading && (
+
+                                <tr>
+
+                                    <td colSpan={5}>
+
+                                        Carregando...
+
+                                    </td>
+
+                                </tr>
+
+                            )}
+
+                            {!loading && lista.length === 0 && (
+
+                                <tr>
+
+                                    <td colSpan={5}>
+
+                                        Nenhuma empresa encontrada.
+
+                                    </td>
+
+                                </tr>
+
+                            )}
+
+                            {!loading && lista.map((empresa)=>(
+
+                                <tr key={empresa._id}>
+
+                                    <td>
 
                                         {empresa.nome}
 
-                                    </h3>
+                                    </td>
 
-                                    <p className="text-secondary">
+                                    <td>
 
                                         {empresa.email}
 
-                                    </p>
+                                    </td>
 
-                                    <p className="text-caption mt-2">
+                                    <td>
 
                                         {empresa.telefone}
 
-                                    </p>
+                                    </td>
 
-                                </Card>
+                                    <td>
 
-                            ))
+                                        <span
+                                            className={
+                                                empresa.ativo
+                                                    ? "badge badge-success"
+                                                    : "badge badge-danger"
+                                            }
+                                        >
 
-                        }
+                                            {empresa.ativo ? "Ativa" : "Inativa"}
 
-                    </div>
+                                        </span>
 
-                )
+                                    </td>
 
-            }
+                                    <td>
+
+                                        <div className="flex gap-2">
+
+                                            <Button variant="secondary">
+
+                                                Editar
+
+                                            </Button>
+
+                                            <Button variant="danger">
+
+                                                Excluir
+
+                                            </Button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            ))}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </Card>
 
         </>
 
     );
 
 }
-
