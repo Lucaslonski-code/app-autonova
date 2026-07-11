@@ -2,9 +2,9 @@
 "use client";
 
 import DashboardHero from "@/components/dashboard/DashboardHero";
-import PageHeader from "@/components/layout/PageHeader";
-import Card from "@/components/ui/Card";
-import Button from "@/components/ui/Button";
+import { PageHeader } from "@/components/layout/PageHeader";
+import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 
 export default function DashboardPage() {
 
