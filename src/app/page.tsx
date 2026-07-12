@@ -1,12 +1,23 @@
 
-import { AuthLayout } from "@/components/layout/AuthLayout";
-import { LoginForm } from "@/components/forms/LoginForm";
+"use client";
 
-export default function LoginPage() {
-  return (
-    <AuthLayout>
-      <LoginForm />
-    </AuthLayout>
-  );
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { cookieService } from "@/lib/cookies";
+
+export default function HomePage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = cookieService.getAccessToken();
+
+    if (token) {
+      router.replace("/dashboard");
+    } else {
+      router.replace("/login");
+    }
+  }, [router]);
+
+  return null;
 }
 

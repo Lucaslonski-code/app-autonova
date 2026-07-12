@@ -1,131 +1,351 @@
 
-# APP AUTONOVA
+# Front-end — AutoNova
 
-Sistema principal da plataforma Autonova.
+## Stack
 
-## Objetivo
-
-Este projeto é responsável por:
-
-* Cadastro de empresas
-* Login de usuários
-* Autenticação Google
-* Recuperação de senha
-* Dashboard administrativo
-* Gestão de clientes
-* Gestão de agendamentos
-* Gestão de pedidos
-* Gestão de produtos
-* Integração com agentes de IA
-* Integração com MCP Server
+- Next.js 16 (App Router)
+- React
+- TypeScript
+- Axios
+- js-cookie
+- pnpm
 
 ---
 
-## Arquitetura
+# Estrutura
 
-```text
-Frontend
+Toda a aplicação está localizada em:
 
-Next.js 16
-React 19
-TypeScript
-Tailwind CSS
+src/
 
-↓
+Organização principal:
 
-API
-
-api.autonovasoftware.com
-
-↓
-
-MongoDB
+```
+src
+├── app
+├── assets
+├── components
+├── config
+├── constants
+├── contexts
+├── hooks
+├── lib
+├── providers
+├── services
+├── styles
+└── types
 ```
 
 ---
 
-## Ambientes
+# Arquitetura
 
-```env
-NEXT_PUBLIC_API_URL=https://api.autonovasoftware.com/api
+A aplicação utiliza App Router.
+
 ```
+app
+├── (auth)
+└── (dashboard)
+```
+
+Cada grupo possui seu próprio layout.
 
 ---
 
-## Instalação
+# Components
 
-```bash
+Os components estão separados por responsabilidade.
+
+```
+components
+├── actions
+├── dashboard
+├── forms
+├── layout
+├── modules
+├── navigation
+├── table
+└── ui
+```
+
+## ui
+
+Components reutilizáveis.
+
+Exemplo:
+
+- Button
+- Card
+- Input
+- Modal
+- Badge
+- Table
+- Pagination
+- Spinner
+- SearchInput
+
+Nunca duplicar components.
+
+Sempre reutilizar.
+
+---
+
+## layout
+
+Componentes estruturais.
+
+Exemplo:
+
+- Sidebar
+- Topbar
+- Header
+- Footer
+- PageHeader
+- ProtectedRoute
+
+---
+
+## modules
+
+Cada entidade possui seu módulo.
+
+Exemplo:
+
+```
+empresa
+
+EmpresaCard
+EmpresaFilter
+EmpresaForm
+EmpresaTable
+```
+
+O mesmo padrão existe para:
+
+- cliente
+- serviço
+- usuário
+- agendamento
+- configuração
+
+Esses arquivos são apenas componentes de apresentação.
+
+A lógica NÃO deve ficar neles.
+
+---
+
+# Pages
+
+Toda regra de negócio deve ficar dentro das pages.
+
+As pages devem:
+
+- chamar hooks
+- chamar services
+- controlar modal
+- controlar pesquisa
+- controlar paginação
+- controlar edição
+- controlar exclusão
+
+Os components de modules apenas exibem interface.
+
+---
+
+# Hooks
+
+```
+hooks
+
+useEmpresas
+useClientes
+useServicos
+useUsuarios
+useAgendamentos
+```
+
+Responsáveis por:
+
+- carregar dados
+- atualizar lista
+- controlar loading
+
+Nunca acessar API diretamente na page.
+
+---
+
+# Services
+
+Todos os CRUD ficam em:
+
+```
+services
+```
+
+Padrão:
+
+```
+listar()
+
+buscar()
+
+criar()
+
+atualizar()
+
+excluir()
+```
+
+Exemplo:
+
+empresa.service.ts
+
+```
+listarEmpresas()
+
+buscarEmpresa()
+
+criarEmpresa()
+
+atualizarEmpresa()
+
+excluirEmpresa()
+```
+
+As pages devem consumir apenas os services.
+
+---
+
+# Types
+
+Todos os tipos ficam em
+
+```
+types
+```
+
+Nunca declarar interfaces dentro das pages.
+
+Sempre importar.
+
+---
+
+# Lib
+
+```
+lib
+
+api.ts
+cookies.ts
+interceptors.ts
+storage.ts
+validators.ts
+utils.ts
+```
+
+Toda comunicação HTTP utiliza:
+
+```
+api.ts
+```
+
+Nunca utilizar fetch diretamente.
+
+---
+
+# Styles
+
+```
+styles
+
+variables.css
+utilities.css
+layout.css
+dashboard.css
+forms.css
+animations.css
+typography.css
+scrollbar.css
+```
+
+Toda estilização deve utilizar os arquivos existentes.
+
+Não criar CSS duplicado.
+
+---
+
+# Regras
+
+- Não criar novos components se já existir equivalente.
+- Não duplicar Table.
+- Não duplicar Modal.
+- Não duplicar Button.
+- Não alterar arquitetura.
+- Toda lógica fica na page.
+- Components são somente apresentação.
+
+---
+
+# Fluxo de uma página
+
+Exemplo:
+
+```
+Page
+
+↓
+
+useHook
+
+↓
+
+service
+
+↓
+
+api
+
+↓
+
+backend
+```
+
+A page controla:
+
+- pesquisa
+- modal
+- loading
+- paginação
+- edição
+- exclusão
+
+Os modules apenas recebem props.
+
+---
+
+# Desenvolvimento
+
+Instalar dependências
+
+```
 pnpm install
 ```
 
----
+Rodar
 
-## Desenvolvimento
-
-```bash
+```
 pnpm dev
 ```
 
----
+Verificar erros
 
-## Build
-
-```bash
-pnpm build
+```
+pnpm tsc --noEmit
 ```
 
 ---
 
-## Estrutura
+# Objetivo
 
-```text
-src/
-
-app/
-components/
-contexts/
-hooks/
-services/
-types/
-lib/
-constants/
-```
-
----
-
-## Documentação
-
-Toda documentação operacional encontra-se na pasta:
-
-```text
-docs/
-```
-
-A leitura deve seguir a ordem indicada dentro da documentação.
-
----
-
-## Status Atual
-
-Projeto em desenvolvimento.
-
-Módulos planejados:
-
-* Autenticação
-* Dashboard
-* Clientes
-* Agenda
-* Produtos
-* Pedidos
-* IA
-* Integrações
-* Configurações
-
----
-
-## Equipe
-
-Autonova Software
-
-Todos os direitos reservados.
+Finalizar todas as páginas do dashboard mantendo exatamente a arquitetura existente, reutilizando os componentes atuais e evitando criação de infraestrutura paralela.
 
