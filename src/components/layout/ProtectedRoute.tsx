@@ -15,7 +15,7 @@ export default function ProtectedRoute({
 
   useEffect(() => {
     const token =
-      cookieService.getToken();
+      cookieService.getAccessToken();
 
     if (!token) {
       router.push("/login");
