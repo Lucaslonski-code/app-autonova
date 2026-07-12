@@ -4,7 +4,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-import { cookieService } from "@/src/lib/cookies";
+import { cookieService } from "@/lib/cookies";
 
 export default function ProtectedRoute({
   children,
