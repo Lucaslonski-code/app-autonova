@@ -3,12 +3,19 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-import { useEmpresas } from "@/hooks/useEmpresas";
-
 import { PageHeader } from "@/components/layout/PageHeader";
 
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
+import Badge from "@/components/ui/Badge";
+import { Modal } from "@/components/ui/Modal";
+
+import { EmpresaForm } from "@/components/modules/empresa/EmpresaForm";
+
+import { useEmpresas } from "@/hooks/useEmpresas";
+
+import { excluirEmpresa } from "@/services/empresa.service";
 
 export default function EmpresasPage() {
 
@@ -18,11 +25,13 @@ export default function EmpresasPage() {
 
         loading,
 
-        atualizar, 
+        atualizar,
 
     } = useEmpresas();
 
     const [busca, setBusca] = useState("");
+
+    const [modalAberto, setModalAberto] = useState(false);
 
     useEffect(() => {
 
@@ -42,6 +51,20 @@ export default function EmpresasPage() {
 
     }, [empresas, busca]);
 
+    async function remover(id: string) {
+
+        if (!window.confirm("Deseja excluir esta empresa?")) {
+
+            return;
+
+        }
+
+        await excluirEmpresa(id);
+
+        await atualizar();
+
+    }
+
     return (
 
         <>
@@ -50,7 +73,7 @@ export default function EmpresasPage() {
 
                 title="Empresas"
 
-                description="Gerencie as empresas cadastradas."
+                description="Gerencie todas as empresas."
 
             />
 
@@ -58,19 +81,21 @@ export default function EmpresasPage() {
 
                 <div className="page-actions">
 
-                    <input
-
-                        className="input"
+                    <Input
 
                         placeholder="Pesquisar empresa..."
 
                         value={busca}
 
-                        onChange={(e)=>setBusca(e.target.value)}
+                        onChange={(e) => setBusca(e.target.value)}
 
                     />
 
-                    <Button>
+                    <Button
+
+                        onClick={() => setModalAberto(true)}
+
+                    >
 
                         Nova Empresa
 
@@ -88,7 +113,7 @@ export default function EmpresasPage() {
 
                                 <th>Nome</th>
 
-                                <th>E-mail</th>
+                                <th>Email</th>
 
                                 <th>Telefone</th>
 
@@ -130,7 +155,7 @@ export default function EmpresasPage() {
 
                             )}
 
-                            {!loading && lista.map((empresa)=>(
+                            {!loading && lista.map((empresa) => (
 
                                 <tr key={empresa._id}>
 
@@ -154,17 +179,15 @@ export default function EmpresasPage() {
 
                                     <td>
 
-                                        <span
-                                            className={
-                                                empresa.ativo
-                                                    ? "badge badge-success"
-                                                    : "badge badge-danger"
-                                            }
-                                        >
+                                        <Badge>
 
-                                            {empresa.ativo ? "Ativa" : "Inativa"}
+                                            {empresa.ativo
 
-                                        </span>
+                                                ? "Ativa"
+
+                                                : "Inativa"}
+
+                                        </Badge>
 
                                     </td>
 
@@ -172,13 +195,23 @@ export default function EmpresasPage() {
 
                                         <div className="flex gap-2">
 
-                                            <Button variant="secondary">
+                                            <Button
+
+                                                variant="secondary"
+
+                                            >
 
                                                 Editar
 
                                             </Button>
 
-                                            <Button variant="danger">
+                                            <Button
+
+                                                variant="danger"
+
+                                                onClick={() => void remover(empresa._id)}
+
+                                            >
 
                                                 Excluir
 
@@ -200,8 +233,37 @@ export default function EmpresasPage() {
 
             </Card>
 
+            <Modal open={modalAberto}>
+
+                <div className="flex justify-between items-center mb-5">
+
+                    <h2>
+
+                        Nova Empresa
+
+                    </h2>
+
+                    <Button
+
+                        variant="secondary"
+
+                        onClick={() => setModalAberto(false)}
+
+                    >
+
+                        Fechar
+
+                    </Button>
+
+                </div>
+
+                <EmpresaForm />
+
+            </Modal>
+
         </>
 
     );
 
 }
+
