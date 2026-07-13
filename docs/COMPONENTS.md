@@ -884,13 +884,28 @@ Mobile
 
 # Performance
 
-Sempre utilizar:
+Os componentes devem ser desenvolvidos priorizando simplicidade.
 
-memo
+Não utilizar otimizações prematuramente.
 
-quando necessário.
+Utilize:
 
-Evitar renderizações desnecessárias.
+- React.memo() apenas quando houver renderizações desnecessárias comprovadas.
+- useMemo() apenas para cálculos pesados ou listas derivadas.
+- useCallback() apenas quando necessário para evitar recriação de funções passadas como props.
+
+Evite:
+
+- React.memo() em todos os componentes.
+- useMemo() para valores simples.
+- useCallback() sem necessidade.
+
+A prioridade é:
+
+1. Código legível.
+2. Componentes reutilizáveis.
+3. Boa arquitetura.
+4. Otimização somente quando realmente necessária.
 
 ---
 
